@@ -46,18 +46,18 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative isolate mt-16 overflow-hidden bg-[#38204f] text-white">
+    <footer className="relative isolate mt-16 overflow-hidden bg-[#000] text-white">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-32 -top-40 h-96 w-96 rounded-full bg-cyan-400/90 blur-[1px]"
+        className="pointer-events-none absolute -left-32 -top-40 h-96 w-96 "
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-24 top-24 h-80 w-80 rounded-full bg-fuchsia-300/80 blur-[1px]"
+        className="pointer-events-none absolute -right-24 top-24 h-80 w-80"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-[-12rem] left-1/3 h-96 w-96 rounded-full bg-violet-500/70 blur-3xl"
+        className="pointer-events-none absolute bottom-[-12rem] left-1/3 h-96 w-96 "
       />
 
       <div className="relative mx-auto max-w-6xl px-5 pb-8 pt-16 sm:px-8 sm:pt-20">

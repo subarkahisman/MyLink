@@ -67,8 +67,9 @@ export default async function Home() {
       <div className="mt-8 flex justify-center">
         <Link
           href="/account"
-          className="flex items-center gap-2 border p-2 px-3 shadow rounded-md text-white bg-blue-500 hover:bg-blue-300 font-bold"
+          className="flex items-center gap-2 border p-2 px-3 shadow rounded-full text-white bg-lime-500 hover:bg-lime-300 font-bold"
         >
+          {/* rounded-full bg-lime-300 hover:bg-lime-100 text-black py-4 px-6 whitespace-nowrap */}
           Start now
         </Link>
       </div>

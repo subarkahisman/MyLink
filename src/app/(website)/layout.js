@@ -4,7 +4,7 @@ import '../globals.css'
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: 'LinkTri Clone',
+  title: 'MyLink',
   description: 'Share your links, social profiles, contact info and more on one page',
 }
 

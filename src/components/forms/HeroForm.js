@@ -33,20 +33,24 @@ export default function HeroForm({user}) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="inline-flex items-center shadow-lg bg-white shadow-gray-500/20 rounded-md">
-          <span className="bg-white py-4 pl-4 rounded-md">
+      className="inline-flex items-center shadow-lg bg-white shadow-gray-500/20 rounded-full">
+          <span className="bg-white py-4 pl-4 rounded-l-full">
             linktri.vercel.app/
           </span>
       <input
         type="text"
         className=""
-        style={{backgroundColor:'white',marginBottom:0,paddingLeft:0}}
+        style={{backgroundColor:'white',marginBottom:0,paddingLeft:0}} 
         placeholder="username"/>
+        
       <button
         type="submit"
-        className="bg-blue-500 hover:bg-blue-300 rounded-md text-white py-4 px-6 whitespace-nowrap">
+        className="rounded-full bg-lime-300 hover:bg-lime-100 text-black py-4 px-6 whitespace-nowrap font-bold">
+          
         Join for Free
       </button>
     </form>
   );
 }
+
+
