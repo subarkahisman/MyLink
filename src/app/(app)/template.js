@@ -30,50 +30,70 @@ export default async function AppTemplate({ children, ...rest }) {
     <html lang="en">
       <body className={`${inter.variable} ${poppins.variable}`}>
         <Toaster />
-        <main className="md:flex min-h-screen">
+        <main className="min-h-screen bg-[#f5f7f6] md:flex">
           <label
             htmlFor="navCb"
-            className="md:hidden ml-8 mt-4 p-4 rounded-md bg-white shadow inline-flex items-center gap-2 cursor-pointer"
+            className="m-4 inline-flex cursor-pointer items-center gap-2 rounded-xl border border-slate-200 bg-white p-3 text-slate-700 shadow-sm md:hidden"
           >
             <FontAwesomeIcon icon={faBars} />
+            <span className="font-semibold">LinkTri</span>
           </label>
           <input id="navCb" type="checkbox" className="hidden" />
           <label
             htmlFor="navCb"
-            className="hidden backdrop fixed inset-0 bg-black/80 z-10"
+            className="backdrop fixed inset-0 z-10 hidden bg-slate-950/40"
           ></label>
-          <aside className="bg-white w-48 p-4 pt-6 shadow fixed md:static -left-48 top-0 bottom-0 z-20 transition-all">
-            <div className="sticky top-0 pt-2">
-              <div className="rounded-full overflow-hidden aspect-square w-24 mx-auto">
-                <Image
-                  src={session.user.image}
-                  width={256}
-                  height={256}
-                  alt={"avatar"}
-                />
-              </div>
-              {page && (
-                <Link
-                  target="_blank"
-                  href={"/" + page.uri}
-                  className="text-center mt-4 flex gap-1 items-center justify-center"
-                >
+          <aside className="fixed -left-72 bottom-0 top-0 z-20 w-72 border-r border-slate-200 bg-white p-5 transition-all md:sticky md:left-0 md:flex md:h-screen md:w-64 md:shrink-0 md:flex-col md:p-6">
+            <Link href="/" className="mb-10 flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600 text-lg font-bold text-white">
+                L
+              </span>
+              <span className="text-xl font-semibold tracking-tight text-slate-900">
+                LinkTri
+              </span>
+            </Link>
+            <div className="mb-6 flex items-center gap-3 rounded-2xl bg-slate-50 p-3">
+              <div className="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-emerald-100">
+                {session.user.image && (
                   <Image
-                    src={"/assets/logo.webp"}
-                    alt="logo"
-                    height={40}
-                    width={40}
-                  />{" "}
-                  <span className="text-xl text-gray-300">/</span>
-                  <span className="hover:underline">{page.uri}</span>
-                </Link>
-              )}
-              <div className="text-center">
-                <AppSidebar />
+                    className="h-full w-full object-cover"
+                    src={session.user.image}
+                    width={80}
+                    height={80}
+                    alt="Foto profil"
+                  />
+                )}
+              </div>
+              <div className="min-w-0">
+                <p className="truncate text-sm font-semibold text-slate-800">
+                  {session.user.name || "Akun saya"}
+                </p>
+                <p className="truncate text-xs text-slate-500">
+                  {session.user.email}
+                </p>
               </div>
             </div>
+            <AppSidebar />
+            {page && (
+              <Link
+                target="_blank"
+                rel="noreferrer"
+                href={"/" + page.uri}
+                className="mt-auto flex items-center gap-2 rounded-xl border border-slate-200 p-3 text-sm text-slate-600 transition hover:border-emerald-200 hover:bg-emerald-50 hover:text-emerald-800"
+              >
+                <Image
+                  src="/assets/logo.webp"
+                  alt=""
+                  height={32}
+                  width={32}
+                  className="rounded-lg"
+                />
+                <span className="min-w-0 flex-1 truncate">/{page.uri}</span>
+                <FontAwesomeIcon icon={faLink} className="h-3 w-3" />
+              </Link>
+            )}
           </aside>
-          <div className="grow">{children}</div>
+          <div className="min-w-0 grow">{children}</div>
         </main>
       </body>
     </html>

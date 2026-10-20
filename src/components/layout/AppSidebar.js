@@ -1,50 +1,50 @@
 'use client';
 import LogoutButton from "@/components/buttons/LogoutButton";
 import {faFileLines} from "@fortawesome/free-regular-svg-icons";
-import {faArrowLeft, faChartLine} from "@fortawesome/free-solid-svg-icons";
+import {faChartLine, faPalette} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 
 export default function AppSidebar() {
   const path = usePathname();
+  const linkClass = (href) =>
+    "flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium transition "
+    + (path === href
+      ? "bg-emerald-50 text-emerald-800"
+      : "text-slate-600 hover:bg-slate-50 hover:text-slate-900");
+
   return (
-    <nav className="inline-flex mx-auto flex-col text-center mt-8 gap-2 text-gray-500">
+    <nav aria-label="Navigasi dashboard" className="flex flex-col gap-1">
       <Link
         href={'/account'}
-        className={
-          "flex gap-4 p-2 "
-          + (path === '/account' ? 'text-blue-500 hover:underline' : 'hover:underline')
-        }>
+        className={linkClass('/account')}>
         <FontAwesomeIcon
           fixedWidth={true}
           icon={faFileLines}
-          className={'w-6 h-6'}
+          className="h-4 w-4"
         />
-        <span className="">My Page</span>
+        <span>Beranda</span>
       </Link>
       <Link
         href={'/analytics'}
-        className={
-          "flex gap-4 p-2 "
-          + (path === '/analytics' ? 'text-blue-500 hover:underline' : 'hover:underline')
-        }>
+        className={linkClass('/analytics')}>
         <FontAwesomeIcon
           fixedWidth={true}
           icon={faChartLine}
-          className={'w-6 h-6'}
+          className="h-4 w-4"
         />
-        <span className="">Analytics</span>
+        <span>Analitik</span>
+      </Link>
+      <Link href="/appearance" className={linkClass('/appearance')}>
+        <FontAwesomeIcon fixedWidth icon={faPalette} className="h-4 w-4" />
+        <span>Tampilan</span>
       </Link>
       <LogoutButton
         iconLeft={true}
-        className={'flex gap-4 items-center text-gray-500 p-2 hover:underline'}
-        iconClasses={'w-6 h-6'}
+        className="mt-5 flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left text-sm font-medium text-slate-600 transition hover:bg-slate-50 hover:text-slate-900"
+        iconClasses="h-4 w-4"
       />
-      <Link href={'/'} className="flex items-center gap-2 text-xs text-gray-500 border-t pt-4 hover:underline">
-        <FontAwesomeIcon icon={faArrowLeft} className={'w-3 h-3'} />
-        <span>Back to website</span>
-      </Link>
     </nav>
   );
 }

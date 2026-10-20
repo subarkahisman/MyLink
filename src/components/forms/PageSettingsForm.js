@@ -53,7 +53,7 @@ export default function PageSettingsForm({ page, user }) {
       <SectionBox>
         <form action={saveBaseSettings}>
           <div
-            className="py-4 -m-4 min-h-[300px] flex justify-center items-center bg-cover bg-center"
+            className="py-4 -m-5 min-h-[300px] flex justify-center items-center bg-cover bg-center sm:-m-6"
             style={
               bgType === "color"
                 ? { backgroundColor: bgColor }

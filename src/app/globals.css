@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body{
-    @apply bg-gray-100;
+    @apply bg-[#f5f7f6] text-slate-800;
     font-family: var(--font-inter), sans-serif;
 }
 
@@ -12,10 +12,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 input[type="text"], textarea{
-    @apply bg-gray-100 w-full block py-2 px-2 mb-2;
+    @apply block w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 mb-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-100;
 }
 label.input-label{
-    @apply uppercase text-gray-400 text-xs mb-2 font-semibold;
+    @apply mb-1.5 block text-[11px] font-semibold uppercase tracking-wider text-slate-500;
 }
 
 .radio-togglers{
@@ -41,6 +41,12 @@ input#navCb:checked ~ aside{
 }
 input#navCb:checked ~ .backdrop{
     display: block;
+}
+
+@media (min-width: 768px) {
+    input#navCb:checked ~ aside {
+        left: 0;
+    }
 }
 /* LoadingSpinner.css */
 .loading-spinner-container {
