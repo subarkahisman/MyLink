@@ -202,8 +202,8 @@ export default function AppearanceEditor({ page, user }) {
             </span>
           </div>
 
-          <div className="mx-auto max-w-[270px] rounded-[2rem] border-[7px] border-slate-900 bg-slate-900 p-1 shadow-xl">
-            <div className="overflow-hidden rounded-[1.4rem] bg-white">
+          <div className="mx-auto max-w-[270px] rounded-[2rem] border-[7px] border-slate-900 bg-slate-900 p-1 shadow-xlmx-auto h-[564px] w-[284px] rounded-[3.25rem] border-[7px] border-slate-900 bg-slate-900 p-1 shadow-xl">
+            <div className="h-full overflow-y-auto rounded-[2.75rem] bg-white">
               <div className="h-24 bg-cover bg-center" style={backgroundStyle} />
               <div className="px-4 pb-5 text-center">
                 <div className="mx-auto -mt-10 flex h-20 w-20 items-center justify-center overflow-hidden rounded-full border-4 border-white bg-emerald-100 text-xl font-semibold text-emerald-800 shadow-sm">
